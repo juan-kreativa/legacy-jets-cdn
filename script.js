@@ -84,6 +84,7 @@ document.addEventListener("DOMContentLoaded", function() {
 //END GSAP------------------------------------------------------------------------
 
 
+//VIDEO HERO SLIDER------------------------------------------------------------------------
 document.addEventListener("DOMContentLoaded", function () {
     const videos = Array.from(document.querySelectorAll('.hero-video'));
     const nextBtn = document.querySelector('.w-slider-arrow-right');
@@ -180,3 +181,4 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 });
+//END VIDEO HERO SLIDER------------------------------------------------------------------------
