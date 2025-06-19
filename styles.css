@@ -1,0 +1,75 @@
+.no-scroll {
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+  scrollbar-gutter: stable; /* Reserves space for scrollbar */
+}
+
+.navbar3_dropdown-list.w--open {
+  overflow-y: auto;
+  max-height: 100vh;
+  -webkit-overflow-scrolling: touch;
+  pointer-events: auto;
+  scrollbar-gutter: stable; /* Also reserves space in dropdown */
+}
+
+/* Alternative for broader browser support */
+html {
+  scrollbar-gutter: stable;
+}
+.navbar3_dropdown-list.w--open {
+  overflow-y: auto;
+  max-height: 100vh;
+  -webkit-overflow-scrolling: touch;
+  pointer-events: auto;
+  scroll-behavior: smooth; /* Native smooth scrolling */
+  scrollbar-gutter: stable;
+}
+  a, .navbar3_dropdown-toggle{
+  transition: all .4s ease; 
+  }
+  a:hover .text-navbar-label, .navbar3_dropdown-toggle:hover .text-navbar-label{
+  color:var(--_primitives---colors--white);
+  }
+ .hero-video {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+}
+  .w-slider-dot {
+    border-radius: 0 !important;
+    width: 4px !important;
+    height:10%;
+    background-color:var(--_primitives---opacity--white-70);
+}
+  .w-slider-dot.w-active {
+    background-color:var(--_primitives---colors--white);
+}
+  .w-slider {
+    overflow: hidden !important;
+}
+.w-slider-mask {
+    overflow: hidden !important;
+}
+.w-slides {
+    overflow: hidden !important;
+}
+.w-slide {
+    overflow: hidden !important;
+}
+.split {
+  opacity: 0;
+}
+
+.split.split-ready {
+  opacity: 1;
+}
+
+.split-line {
+  overflow: hidden;
+}
+
+.split-word {
+  display: inline-block;
+  will-change: transform, opacity;
+}
