@@ -1,0 +1,6 @@
+name = "legacy-jets-cdn"
+main = "src/index.js"
+compatibility_date = "2025-06-19"
+
+[assets]
+directory = "./"
