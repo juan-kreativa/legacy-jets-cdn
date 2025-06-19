@@ -6,14 +6,13 @@ gsap.registerPlugin(SplitText, ScrollTrigger, ScrollSmoother);
 const animatedElements = new Set();
 function createSplitAnimation(element, isHero = false) {
   const splitText = new SplitText(element, {
-    type: "lines, words",
-    linesClass: "split-line",
-    wordsClass: "split-word"
+    type: "lines",
+    linesClass: "split-line"
   });
 
-  // Add ready class to show element and set initial state for words
+  // Add ready class to show element and set initial state for lines
   element.classList.add('split-ready');
-  gsap.set(splitText.words, {
+  gsap.set(splitText.lines, {
     y: 100,
     autoAlpha: 0
   });
@@ -23,11 +22,11 @@ function createSplitAnimation(element, isHero = false) {
     paused: true
   });
 
-  tl.to(splitText.words, {
+  tl.to(splitText.lines, {
     duration: 1,
     y: 0,
     autoAlpha: 1,
-    stagger: 0.05,
+    stagger: 0.1,
     ease: "power2.out"
   });
 
@@ -66,20 +65,21 @@ document.addEventListener("DOMContentLoaded", function() {
   // Initialize split text after ScrollSmoother
   gsap.delayedCall(0.2, () => {
     const splitElements = document.querySelectorAll(".split");
-    
+
     splitElements.forEach(element => {
       // Check for hero class or if element is in a hero container
       const isHero = element.classList.contains("hero") || 
                      element.closest(".hero") ||
                      element.closest("[class*='hero']");
-      
+
       createSplitAnimation(element, isHero);
     });
-    
+
     // Refresh ScrollTrigger after everything is set up
     ScrollTrigger.refresh();
   });
 });
+
 
 //END GSAP------------------------------------------------------------------------
 
