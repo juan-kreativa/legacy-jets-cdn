@@ -6,8 +6,9 @@ gsap.registerPlugin(SplitText, ScrollTrigger, ScrollSmoother);
 const animatedElements = new Set();
 function createSplitAnimation(element, isHero = false) {
   const splitText = new SplitText(element, {
-    type: "lines",
-    linesClass: "split-line"
+    type: "lines, words",
+    linesClass: "split-line",
+    wordsClass: "split-word"
   });
 
   // Add ready class to show element and set initial state for words
